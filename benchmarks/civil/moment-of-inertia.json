@@ -1,0 +1,5 @@
+﻿{
+  "question": "A rectangular concrete beam has a width of 300 mm and an effective depth of 500 mm. Calculate the moment of inertia about the neutral axis.",
+  "ground_truth": "For a rectangular cross-section, the moment of inertia about the neutral axis is: I = (b × h³) / 12, where b is the width and h is the total depth. However, for effective depth d = 500mm, assuming total depth h ≈ d, we get: I = (300 × 500³) / 12 = (300 × 125,000,000) / 12 = 37,500,000,000 / 12 = 3,125,000,000 mm⁴ = 3.125 × 10⁹ mm⁴ = 3.125 × 10⁻³ m⁴. The moment of inertia is 3.125 × 10⁹ mm⁴ or 3.125 × 10⁻³ m⁴.",
+  "ai_response": "For a rectangular section, the second moment of area about the neutral axis is I = bh³ / 12. Using b = 300 mm and h = 500 mm (treating effective depth as total depth): I = (300 × 500³) / 12 = (300 × 125,000,000) / 12 = 37,500,000,000 / 12 = 3,125,000,000 mm⁴. This can also be expressed as 3.125 × 10⁹ mm⁴. The moment of inertia of the beam section is 3.125 × 10⁹ mm⁴."
+}

@@ -1,0 +1,5 @@
+﻿{
+  "question": "A transformer has 500 turns in the primary coil and 100 turns in the secondary coil. If the primary voltage is 240V, calculate the secondary voltage.",
+  "ground_truth": "For an ideal transformer, the voltage ratio equals the turns ratio: V_s / V_p = N_s / N_p. Given: V_p = 240V, N_p = 500 turns, N_s = 100 turns. Therefore: V_s = V_p × (N_s / N_p) = 240 × (100 / 500) = 240 × 0.2 = 48V. The secondary voltage is 48V.",
+  "ai_response": "Using the transformer equation, the voltage ratio is proportional to the turns ratio. With 500 primary turns and 100 secondary turns, the ratio is 1:5. So the secondary voltage is 240V / 5 = 48V. This is a step-down transformer."
+}

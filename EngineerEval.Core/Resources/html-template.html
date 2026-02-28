@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EngineerEval Summary</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #fafafa; }
+        h1 { color: #1a3c5e; }
+        h2 { color: #2c5f8a; border-bottom: 2px solid #d0e4f7; padding-bottom: 4px; }
+        pre { background-color: #f5f5f5; padding: 15px; border-radius: 5px; overflow: auto; font-size: 0.85em; }
+        .score-summary { margin: 20px 0; padding: 15px; background-color: #e8f4fd; border-radius: 5px; border-left: 4px solid #2980b9; }
+        .score-highlight { font-weight: bold; color: #1a6fa8; }
+        .score-good { font-weight: bold; color: #27ae60; }
+        .score-warn { font-weight: bold; color: #e67e22; }
+        .score-bad  { font-weight: bold; color: #c0392b; }
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid #ccd; padding: 9px 12px; text-align: left; }
+        th { background-color: #1a3c5e; color: #fff; }
+        tr:nth-child(even) { background-color: #f0f4f8; }
+        tr:hover { background-color: #d6eaf8; }
+        .domain-badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 0.8em; font-weight: bold; }
+        .domain-mechanical { background-color: #fde8cc; color: #784212; }
+        .domain-electrical { background-color: #d5f5e3; color: #1e6e43; }
+        .domain-civil      { background-color: #d6eaf8; color: #1a5276; }
+        .diagnostics-content { font-size: 0.9em; }
+        .diagnostics-summary { margin: 20px 0; padding: 20px; background-color: #fff8e1; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .metrics-container { display: flex; flex-direction: column; gap: 30px; }
+        .metrics-overview { margin-bottom: 30px; background-color: #fffdf5; padding: 15px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .metrics-breakdown { margin-bottom: 30px; background-color: #fffdf5; padding: 15px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .metrics-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        .metrics-table th { background-color: #f9f3d9; padding: 10px; text-align: left; border-bottom: 2px solid #e8dab0; }
+        .metrics-table td { padding: 8px; text-align: left; border-bottom: 1px solid #f1ecd2; }
+        .metrics-table tr:nth-child(even) { background-color: #fffef8; }
+        .breakdown-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.9em; }
+        .breakdown-table th { background-color: #f9f3d9; padding: 10px; text-align: left; border-bottom: 2px solid #e8dab0; font-weight: 600; }
+        .breakdown-table td { padding: 8px; text-align: left; border-bottom: 1px solid #f1ecd2; }
+        .breakdown-table tr:nth-child(even) { background-color: #fffef8; }
+        .breakdown-table tr:hover { background-color: #fef8e3; }
+        .diagnostics-summary h3 { margin-top: 20px; margin-bottom: 15px; color: #795548; font-size: 1.3em; }
+        /* Add a nice badge style for model names and prompt types */
+        .breakdown-table td:first-child { font-weight: 500; color: #6b5900; }
+        /* Styling for metrics header */
+        .metrics-header { margin-bottom: 20px; }
+        .metrics-header p { font-size: 1.05em; color: #666; margin-top: 0; line-height: 1.4; }
+        /* LinkAndCorrect Analysis Styles */
+        .linkandcorrect-analysis { margin: 20px 0; padding: 20px; background-color: #f3e5f5; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .analysis-overview { margin-bottom: 30px; background-color: #faf8ff; padding: 15px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .pattern-analysis { margin-bottom: 30px; background-color: #faf8ff; padding: 15px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .analysis-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        .analysis-table th { background-color: #e1bee7; padding: 10px; text-align: left; border-bottom: 2px solid #ce93d8; }
+        .analysis-table td { padding: 8px; text-align: left; border-bottom: 1px solid #e8d5ea; }
+        .analysis-table tr:nth-child(even) { background-color: #fdf7ff; }
+        .pattern-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.9em; }
+        .pattern-table th { background-color: #e1bee7; padding: 10px; text-align: left; border-bottom: 2px solid #ce93d8; font-weight: 600; }
+        .pattern-table td { padding: 8px; text-align: left; border-bottom: 1px solid #e8d5ea; }
+        .pattern-table tr:nth-child(even) { background-color: #fdf7ff; }
+        .pattern-table tr:hover { background-color: #f8e8fa; }
+
+    </style>
+</head>
+<body>
+    <h1>EngineerEval &mdash; Evaluation Summary</h1>
+    <p style="color:#555;">Generated: {timestamp} &nbsp;|&nbsp; Benchmarks directory: {workingDirectory}</p>
+    <div class="score-summary">
+        <h2>Overall Scores</h2>
+        <p>Total Benchmarks Evaluated: <span class="score-highlight">{totalSubmissions}</span></p>
+        <p>Average Link Score: <span class="score-highlight">{avgLinkScore:F1}%</span>
+           &nbsp;<small style="color:#555;">(completeness — how much of the ground truth was covered)</small></p>
+        <p>Average Correct Score: <span class="score-highlight">{avgCorrectScore:F1}%</span>
+           &nbsp;<small style="color:#555;">(accuracy — how correct the AI's statements were)</small></p>
+    </div>
+
+
+    <div class="linkandcorrect-analysis">
+        <h2>LinkAndCorrect Analysis</h2>
+        <p>Analysis of missing and incorrect facts patterns from LinkAndCorrect judge evaluations.</p>
+        {linkAndCorrectAnalysis}
+    </div>
+
+    <div class="diagnostics-summary">
+        <h2>Model Performance Metrics</h2>
+        <div class="metrics-header">
+            <p>The following statistics represent model performance data across all language model (LLM) calls:</p>
+        </div>
+        <div class="diagnostics-content">
+            {diagnosticsData}
+        </div>
+    </div>
+    
+    <h2>Benchmark Results</h2>
+    {assessmentsTable}
+
+    <h2>Raw JSON Data</h2>
+    <pre>{jsonData}</pre>
+</body>
+</html>

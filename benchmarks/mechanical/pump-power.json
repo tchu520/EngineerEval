@@ -1,0 +1,5 @@
+﻿{
+  "question": "A pump delivers water at a rate of 0.05 m³/s against a head of 20 meters. If the pump efficiency is 75%, calculate the power required.",
+  "ground_truth": "The hydraulic power (water power) is: P_hydraulic = ρ × g × Q × H, where ρ = 1000 kg/m³ (water density), g = 9.81 m/s², Q = flow rate, H = head. P_hydraulic = 1000 × 9.81 × 0.05 × 20 = 9,810 W = 9.81 kW. The actual power required considering efficiency: P_required = P_hydraulic / η = 9.81 / 0.75 = 13.08 kW. The power required is 13.08 kW.",
+  "ai_response": "The power required by the pump is found in two steps. First, calculate the hydraulic power delivered to the water: P_hydraulic = ρ × g × Q × H = 1000 kg/m³ × 9.81 m/s² × 0.05 m³/s × 20 m = 9810 W = 9.81 kW. Since the pump efficiency is 75%, the shaft power input required is: P_required = P_hydraulic / η = 9.81 kW / 0.75 = 13.08 kW. The pump requires 13.08 kW of input power."
+}

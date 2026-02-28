@@ -1,0 +1,75 @@
+# Task
+You are an expert engineering evaluator. Your task is to compare facts from a ground-truth reference answer with facts from an AI-generated response and compute alignment scores.
+
+# Objective
+Compare two fact sets and calculate alignment scores.
+
+Definitions:
+1. Set A = Facts from the ground-truth answer (provided below)
+2. Set B = Facts from the AI response (provided below)
+3. Calculate:
+   - LINK = (# of Set A facts correctly represented in Set B) ÷ (total # of Set A facts)
+   - CORRECT = (# of Set B facts that are supported by Set A) ÷ (total # of Set B facts)
+
+# Classification Criteria
+
+An AI-response fact (Set B) is CORRECT if:
+✓ It has clear supporting evidence in the ground-truth facts — exact match or semantic equivalence
+✓ Numeric equivalence: "500 N" = "0.5 kN"; rounding within stated tolerance is acceptable
+✓ Algebraic equivalence: a different but mathematically equivalent form of the same equation
+✓ Paraphrasing: different wording but the same technical meaning
+
+An AI-response fact (Set B) is INCORRECT if:
+✗ No supporting evidence exists in the ground-truth facts
+✗ It contradicts a ground-truth fact (wrong value, wrong units, wrong formula)
+✗ It misrepresents a calculation step (e.g., wrong intermediate result)
+✗ It changes the magnitude or direction of a quantity
+
+# Comparison Instructions
+1. Match facts based on technical equivalence — if facts convey the same engineering information, link them.
+2. Mark each Set A fact as "linked" if it is represented in Set B (even with different notation or phrasing).
+3. Mark each Set B fact as "correct" if it is supported by Set A.
+4. Be generous with linking — minor rounding differences and equivalent notation should be linked.
+5. Calculate LINK and CORRECT scores using the formulas above.
+6. Provide a detailed justification showing exact counts and the arithmetic.
+7. Include the complete list of ALL linked facts.
+8. Include ALL missing facts (Set A facts not represented in Set B).
+9. Include ALL incorrect facts (Set B facts not supported by Set A).
+
+# Output JSON Format
+{
+  "link_score": 0.XX,
+  "correct_score": 0.XX,
+  "linked_facts": [
+    "Fact from Set A that was correctly represented in Set B"
+  ],
+  "missing_facts": [
+    {
+      "field": "facts",
+      "type": "omission",
+      "severity": "moderate",
+      "evidenceFromGroundTruth": "The ground-truth fact that was not captured by the AI response",
+      "expected": "This fact should be present in the AI response",
+      "explanation": "Why this omission matters technically"
+    }
+  ],
+  "incorrect_facts": [
+    {
+      "field": "facts",
+      "type": "hallucination",
+      "severity": "critical",
+      "aiResponseFact": "The specific incorrect fact from the AI response",
+      "evidenceFromGroundTruth": "The correct ground-truth fact, or 'No evidence in ground truth' for pure hallucinations",
+      "expected": "Only facts supported by the ground truth should be included",
+      "explanation": "Why this AI-response fact is incorrect or unsupported"
+    }
+  ],
+  "justification": "Extracted X facts from ground truth and Y facts from AI response. Z ground-truth facts were linked (Z/X = link_score). W AI-response facts were accurate (W/Y = correct_score)."
+}
+
+# Set A: Facts from Ground Truth
+{{ground_truth_facts}}
+
+# Set B: Facts from AI Response
+{{ai_response_facts}}
+

@@ -1,0 +1,5 @@
+﻿{
+  "question": "A flywheel with a moment of inertia of 50 kg·m² rotates at 300 RPM. Calculate the kinetic energy stored in the flywheel.",
+  "ground_truth": "The kinetic energy of a rotating object is: KE = (1/2) × I × ω², where I is the moment of inertia and ω is the angular velocity in rad/s. First, convert RPM to rad/s: ω = (300 × 2π) / 60 = 31.42 rad/s. Then: KE = (1/2) × 50 × 31.42² = 25 × 987.36 = 24,684 J ≈ 24.68 kJ. The kinetic energy is approximately 24.68 kJ.",
+  "ai_response": "The kinetic energy stored in a rotating flywheel is given by KE = ½Iω². I need to convert the rotational speed from RPM to radians per second: ω = 300 RPM × (2π / 60) = 31.42 rad/s. Now I can calculate the kinetic energy: KE = ½ × 50 kg·m² × (31.42)² = 25 × 987.2 = 24,681 J ≈ 24.68 kJ. The flywheel stores approximately 24.68 kJ of kinetic energy."
+}

@@ -1,0 +1,5 @@
+﻿{
+  "question": "A resistor of 100 Ω is connected in series with a capacitor of 10 μF across a 120V, 60 Hz AC supply. Calculate the impedance of the circuit.",
+  "ground_truth": "For an RC series circuit, impedance Z = √(R² + X_C²), where X_C is the capacitive reactance. First, calculate X_C: X_C = 1 / (2πfC) = 1 / (2π × 60 × 10 × 10⁻⁶) = 1 / (0.00377) ≈ 265.26 Ω. Then: Z = √(100² + 265.26²) = √(10,000 + 70,363) = √80,363 ≈ 283.5 Ω. The impedance is approximately 283.5 Ω.",
+  "ai_response": "For an RC series circuit, I need to find the capacitive reactance and then combine it with the resistance. The capacitive reactance is X_C = 1 / (2πfC) = 1 / (2π × 60 × 10 × 10⁻⁶) ≈ 265.3 Ω. The total impedance combines resistance and reactance in quadrature: Z = √(R² + X_C²) = √(100² + 265.3²) = √(10,000 + 70,384) = √80,384 ≈ 283.5 Ω. The circuit impedance is approximately 283.5 Ω."
+}

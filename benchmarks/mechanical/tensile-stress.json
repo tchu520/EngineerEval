@@ -1,0 +1,5 @@
+﻿{
+  "question": "A steel rod with a diameter of 20 mm is subjected to a tensile load of 50 kN. Calculate the tensile stress in the rod.",
+  "ground_truth": "Tensile stress is calculated as: σ = F / A, where F is the force and A is the cross-sectional area. For a circular cross-section: A = π × (d/2)² = π × (0.02/2)² = π × 0.01² = π × 0.0001 = 0.000314 m². Therefore: σ = 50,000 N / 0.000314 m² = 159,154,943 Pa ≈ 159.15 MPa. The tensile stress is approximately 159.15 MPa.",
+  "ai_response": "To calculate the tensile stress in the steel rod, I'll use the formula σ = F / A. First, I need to find the cross-sectional area. The diameter is 20 mm = 0.02 m, so the radius is 0.01 m. The area of a circle is A = πr² = π × (0.01)² = 0.000314159 m². Now I can calculate the stress: σ = 50,000 N / 0.000314159 m² = 159,154,943 Pa. Converting to megapascals: 159.15 MPa. The tensile stress in the rod is 159.15 MPa."
+}

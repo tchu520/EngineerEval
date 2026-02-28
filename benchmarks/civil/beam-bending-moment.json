@@ -1,0 +1,5 @@
+﻿{
+  "question": "A simply supported beam with a span of 6 meters carries a uniformly distributed load of 10 kN/m. Calculate the maximum bending moment.",
+  "ground_truth": "For a simply supported beam with uniformly distributed load (UDL), the maximum bending moment occurs at the center and is calculated using the formula: M_max = (w × L²) / 8, where w is the load per unit length and L is the span. Given: w = 10 kN/m, L = 6 m. Therefore: M_max = (10 × 6²) / 8 = (10 × 36) / 8 = 360 / 8 = 45 kN·m. The maximum bending moment is 45 kN·m.",
+  "ai_response": "For a simply supported beam with a uniformly distributed load, the maximum bending moment occurs at mid-span. The formula is M_max = wL² / 8. With w = 10 kN/m and L = 6 m: M_max = 10 × 6² / 8 = 10 × 36 / 8 = 360 / 8 = 45 kN·m. The maximum bending moment is 45 kN·m at the centre of the beam."
+}

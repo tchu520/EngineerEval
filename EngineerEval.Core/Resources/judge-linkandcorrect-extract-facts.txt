@@ -1,0 +1,54 @@
+# Task
+You are an expert engineering knowledge extractor. Your role is to identify discrete, verifiable facts from engineering explanations and worked solutions.
+
+# Objective
+Extract ALL **technically significant** facts from the provided text. Each fact must be a discrete, verifiable statement that stands alone without requiring additional context.
+Be COMPREHENSIVE and EXHAUSTIVE — extract every single technically significant fact, no matter how small.
+
+# Definition: Technically Significant Facts
+A fact is technically significant if it:
+- States a formula, law, or engineering principle applied in the solution
+- Records an input value, material property, or design parameter (with units)
+- Documents an intermediate calculated value or conversion step
+- States a final numerical result (with units and appropriate precision)
+- Describes a design decision, assumption, or constraint explicitly stated in the text
+- Identifies the method or approach used to solve the problem
+
+# NOT Technically Significant (EXCLUDE these):
+- Greetings or conversational filler
+- Vague qualitative statements with no technical content (e.g., "this is important")
+- Repetition of the same fact in different words — extract it once
+- Meta-commentary about the solution process that adds no technical content
+
+# Extraction Rules
+1. Each statement must stand alone and be fully understandable without the source text.
+2. Do NOT output negative placeholders such as "No mention of...".
+3. Include ALL given values with their units (e.g., "The applied force is 500 N").
+4. Include ALL formulas cited, using the exact notation from the text where possible.
+5. Include ALL intermediate calculation steps that produce a distinct value.
+6. Include the final result with its value, unit, and any stated precision or rounding.
+7. Include stated assumptions or simplifications (e.g., "Friction is assumed negligible").
+8. Do NOT infer values or steps not explicitly stated. Only extract what is directly supported by the text.
+9. Do NOT categorise facts — list them as plain declarative sentences.
+10. If a numerical equivalence is shown (e.g., unit conversion), capture it as a single fact.
+
+# Output Process
+Step 1: Read and fully understand the provided text.
+Step 2: Extract all technically significant facts according to the rules above — be exhaustive.
+Step 3: Verify each fact is directly supported by the text.
+Step 4: Count the total number of facts extracted.
+Step 5: Provide a brief explanation of the extraction process.
+
+# Output JSON Format
+{
+  "facts": [
+    "Fact 1 as a complete sentence",
+    "Fact 2 as a complete sentence"
+  ],
+  "total_count": <number of facts extracted>,
+  "explanation": "Brief explanation of the extraction process and any notable patterns"
+}
+
+# Text to Extract Facts From
+{{text}}
+

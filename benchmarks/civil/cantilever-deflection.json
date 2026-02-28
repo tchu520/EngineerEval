@@ -1,0 +1,5 @@
+﻿{
+  "question": "A cantilever beam of length 3 meters carries a point load of 5 kN at its free end. Calculate the maximum deflection if the beam has a Young's modulus of 200 GPa and moment of inertia of 8 × 10⁻⁶ m⁴.",
+  "ground_truth": "For a cantilever beam with a point load at the free end, the maximum deflection is: δ_max = (P × L³) / (3 × E × I), where P = load, L = length, E = Young's modulus, I = moment of inertia. Given: P = 5000 N, L = 3 m, E = 200 × 10⁹ Pa, I = 8 × 10⁻⁶ m⁴. Therefore: δ_max = (5000 × 3³) / (3 × 200 × 10⁹ × 8 × 10⁻⁶) = (5000 × 27) / (4,800,000) = 135,000 / 4,800,000 = 0.028125 m = 28.125 mm. The maximum deflection is 28.125 mm.",
+  "ai_response": "The maximum deflection of a cantilever beam with a point load at the free end is given by δ = PL³ / (3EI). Substituting the values: P = 5000 N, L = 3 m, E = 200 × 10⁹ Pa, I = 8 × 10⁻⁶ m⁴. δ = (5000 × 27) / (3 × 200 × 10⁹ × 8 × 10⁻⁶) = 135,000 / 4,800,000 = 0.028125 m = 28.1 mm. The maximum deflection at the free end is 28.1 mm."
+}

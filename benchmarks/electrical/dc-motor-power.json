@@ -1,0 +1,5 @@
+﻿{
+  "question": "A DC motor draws 10 A from a 120V supply and has an efficiency of 85%. Calculate the output power.",
+  "ground_truth": "First, calculate the input power: P_in = V × I = 120V × 10A = 1200W. Then, calculate the output power using efficiency: P_out = P_in × η = 1200W × 0.85 = 1020W = 1.02 kW. The output power is 1020W or 1.02 kW.",
+  "ai_response": "To find the output power of the DC motor, I first calculate the electrical input power: P_in = V × I = 120V × 10A = 1200W. Applying the efficiency to find the mechanical output power: P_out = P_in × η = 1200W × 0.85 = 1020W. The motor delivers 1020W or 1.02 kW of mechanical output power."
+}

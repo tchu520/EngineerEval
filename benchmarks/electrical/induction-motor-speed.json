@@ -1,0 +1,5 @@
+﻿{
+  "question": "A three-phase induction motor has a synchronous speed of 1500 RPM and operates at a slip of 4%. Calculate the rotor speed.",
+  "ground_truth": "The rotor speed of an induction motor is calculated using: N_rotor = N_sync × (1 - s), where N_sync is the synchronous speed and s is the slip (as a decimal). Given: N_sync = 1500 RPM, slip = 4% = 0.04. Therefore: N_rotor = 1500 × (1 - 0.04) = 1500 × 0.96 = 1440 RPM. The rotor speed is 1440 RPM.",
+  "ai_response": "The rotor speed of an induction motor is always slightly less than the synchronous speed due to slip. The rotor speed is: N_rotor = N_sync × (1 - s) = 1500 RPM × (1 - 0.04) = 1500 × 0.96 = 1440 RPM. The rotor operates at 1440 RPM."
+}

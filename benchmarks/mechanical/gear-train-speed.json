@@ -1,0 +1,5 @@
+﻿{
+  "question": "A gear train consists of a driver gear with 20 teeth rotating at 300 RPM and a driven gear with 60 teeth. Calculate the speed of the driven gear.",
+  "ground_truth": "The gear ratio is calculated as: Gear Ratio = Teeth on Driven / Teeth on Driver = 60 / 20 = 3. The speed relationship is: N_driven = N_driver / Gear Ratio. Given: N_driver = 300 RPM, Gear Ratio = 3. Therefore: N_driven = 300 / 3 = 100 RPM. The driven gear rotates at 100 RPM.",
+  "ai_response": "To find the speed of the driven gear, I'll use the gear ratio relationship. The gear ratio is the number of teeth on the driven gear divided by the number of teeth on the driver gear: Gear Ratio = 60 / 20 = 3. The speed of the driven gear is inversely proportional to the gear ratio: N_driven = N_driver / Gear Ratio = 300 RPM / 3 = 100 RPM. The driven gear rotates at 100 RPM."
+}

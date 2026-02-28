@@ -1,0 +1,5 @@
+﻿{
+  "question": "A concrete column with a cross-sectional area of 0.25 m² supports an axial load of 1000 kN. If the compressive strength of concrete is 25 MPa, calculate the factor of safety.",
+  "ground_truth": "The factor of safety is calculated as: FOS = Ultimate Load / Applied Load. First, calculate the ultimate load capacity: Ultimate Load = Compressive Strength × Area = 25 MPa × 0.25 m² = 25 × 10⁶ N/m² × 0.25 m² = 6,250,000 N = 6250 kN. Then: FOS = 6250 kN / 1000 kN = 6.25. The factor of safety is 6.25.",
+  "ai_response": "The factor of safety is the ratio of the column's ultimate load capacity to the applied load. The ultimate load capacity is: P_ult = f_c × A = 25 × 10⁶ N/m² × 0.25 m² = 6,250,000 N = 6250 kN. The factor of safety is: FOS = P_ult / P_applied = 6250 kN / 1000 kN = 6.25. The column has a factor of safety of 6.25."
+}
