@@ -3,6 +3,11 @@
 A **.NET 9.0** framework for evaluating AI engineering assistants using the **Link & Correct** methodology — a precision/recall approach that measures both the *completeness* and the *accuracy* of an AI-generated engineering answer against a reference solution.
 
 ---
+# Motivation
+
+As AI systems take on real engineering work, the ability to evaluate them rigorously becomes critical. This framework was built to do exactly that: measure whether an AI truly understands an engineering problem or is simply pattern matching its way to an answer. The Link and Correct methodology powering it is something I developed from the ground up, informed by hands-on research into AI evaluation systems. It was first put to work in a production healthcare AI environment, and this repo represents its adaptation into engineering domains.
+
+---
 
 ## Background
 
